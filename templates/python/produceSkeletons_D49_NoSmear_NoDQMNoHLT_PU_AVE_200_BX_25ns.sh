@@ -41,9 +41,22 @@ action() {
    --beamspot NoSmear \
    --geometry Extended2026D49 \
     --pileup AVE_200_BX_25ns \
+   --procModifier fineCalo \
+   --no_exec \
+   --python_filename=GSDfineCalo_fragment.py
+  
+  cmsDriver.py TTbar_14TeV_TuneCP5_cfi \
+   --conditions auto:phase2_realistic_T15 \
+   -n 10 \
+   --era Phase2C9 \
+   --eventcontent FEVTDEBUG \
+   -s GEN,SIM,DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,HLT:@fake2 \
+   --datatier GEN-SIM \
+   --beamspot NoSmear \
+   --geometry Extended2026D49 \
+    --pileup AVE_200_BX_25ns \
    --no_exec \
    --python_filename=GSD_fragment.py
-   
   
   
   cmsDriver.py step3  \
